@@ -1,0 +1,7 @@
+Creat an Event category
+create events
+search events and search listings
+filters
+extension of the server host or recomand another way.
+support and bug fixes
+spare for 3 unknowns services or features, this include update current services ..etc

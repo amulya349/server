@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get Windows Username</title>
+	<script type="text/javascript">
+		var userName='';
+		var userDomain='';
+
+		var wshshell=new ActiveXObject("wscript.network");
+		//write to some (hidden) form field
+		alert("Getting data")
+		with (document.formname) {
+		    userName=wshshell.username;
+		    userDomain=wshshell.userdomain;
+		    alert("username: "+userName+"\nDomain: "+ userDomain);
+		    console.log("Domain: "+ userDomain)
+		}
+		wshshell=null;
+	</script>
+</head>
+<body>
+
+</body>
+</html>
