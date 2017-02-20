@@ -1,6 +1,6 @@
 var LocalStrategy    = require('passport-local').Strategy;
 
-var Puc       = require('../models/puc');
+// var Puc       = require('../models/puc');
 
 module.exports = function(passport) {
 
@@ -13,9 +13,9 @@ module.exports = function(passport) {
 
     // used to deserialize the user
     passport.deserializeUser(function(id, done) {
-        Puc.findById(id, function(err, user) {
-            done(err, user);
-        });
+        // Puc.findById(id, function(err, user) {
+        //     done(err, user);
+        // });
     });
 
     
@@ -27,21 +27,21 @@ module.exports = function(passport) {
     },
     function(req, email, password, done) {
         process.nextTick(function() {
-            Puc.findOne( {$or:[{'local.email' :  email},{'local.username' : email}] }, function(err, user) {
-                if (err)
-                    return done(err);
+            // Puc.findOne( {$or:[{'local.email' :  email},{'local.username' : email}] }, function(err, user) {
+            //     if (err)
+            //         return done(err);
 
-                // if no user is found, return the message
-                if (!user)
-                    return done(null, false, {message: "No user found"});
+            //     // if no user is found, return the message
+            //     if (!user)
+            //         return done(null, false, {message: "No user found"});
 
-                if (!user.validPassword(password))
-                    return done(null, false, {message: 'Oops! Wrong password.'});
+            //     if (!user.validPassword(password))
+            //         return done(null, false, {message: 'Oops! Wrong password.'});
 
-                // all is well, return user
-                else
-                    return done(null, user);
-            });
+            //     // all is well, return user
+            //     else
+            //         return done(null, user);
+            // });
         });
 
     }));

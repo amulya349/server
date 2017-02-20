@@ -13,6 +13,9 @@ var settings = require('./config/settings')
 require('./config/passport')(passport);
 var routes = require('./routes/routes');
 
+var cors=require('cors');
+app.use(cors({origin:true,credentials: true}));
+
 var app = express();
 var port = process.env.PORT || 8080 ;
 
