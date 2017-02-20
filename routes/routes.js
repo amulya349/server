@@ -35,4 +35,13 @@ router.get('/getdata', function(req, res){
     })
 })
 
+router.get('/getlastlocation/:orderid', function(req, res){
+    Product.find({'ordid': req.params.orderid}).sort({'_id', -1}).limit(1).exec(function(err, orders) {
+        if (err)
+            res.send(err);
+
+        res.json(orders);
+    })
+})
+
 module.exports = router;
