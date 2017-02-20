@@ -14,13 +14,13 @@ require('./config/passport')(passport);
 var routes = require('./routes/routes');
 
 var cors=require('cors');
-app.use(cors({origin:true,credentials: true}));
 
 var app = express();
 var port = process.env.PORT || 8080 ;
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(cors({origin:true,credentials: true}));
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
