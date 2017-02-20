@@ -16,9 +16,10 @@ router.post('/insertdata', function(req, res){
     var data = req.body;
     var x = new Product();
     x.name = "Laptop";
-    x.ordid = req.body.Id;
+    x.ordid = req.body.Orderid;
     x.lat = req.body.Latitude;
     x.long = req.body.Longitude;
+    x.timestamp = req.body.Timestamp;
     x.save(function(){
     	res.send(200);
     })

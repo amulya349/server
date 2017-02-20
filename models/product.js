@@ -6,6 +6,7 @@ var productSchema = mongoose.Schema({
     ordid: String,
     lat: String,
     long: String,
+    timestamp: String,
     created : String
 });
 
